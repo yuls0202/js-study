@@ -1,0 +1,27 @@
+<script>
+    //스코프
+    //망원경 - 시야 범위를 제한
+    //변수의 적용범위를 제한
+    //var 함수단위
+    //함수가 종료되면 사라진다.
+    //let const 블록단위
+    //블록이 종료되면 사라진다.
+    //블록 - if/for/while 등
+
+    if(true){
+        //var는 블록이 종료되어도 사라지지않는다.
+        var num = 1;
+    }
+    //console.log(num);
+
+    if(true){
+        //let const는 블록이 종료하면 사라진다.
+        let num1 = 1;
+    }
+    //console.log(num1);
+    
+    for (var index = 0; index < 5; index++) {}
+    console.log(index);
+    for (let index1 = 0; index < 5; index1++) {}
+    console.log(index1);
+</script>
