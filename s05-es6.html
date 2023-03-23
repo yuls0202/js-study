@@ -27,10 +27,97 @@
     //스코프를 늘려야 할 경우 var로 변경
 
     //2. Arrow Fuction
+    //es5 함수 선언문
+    function 함수명1(매개변수1){
+        console.log(매개변수1);
+    }
+    //함수 실행은 함수명 뒤에 소괄호를 붙인다.
+    //함수가 필요로 하는 매개변수를 넣어준다.
+    //JS에서는 매개변수를 넣지 않아도 작동한다.
+    //함수명1();
+
+    //es6
+    //함수 표현식
+    //변수에 익명함수를 값으로 할당한다.
+    const func1 = function(item){
+        console.log(item);
+    }
+    //func1();
+
+    //화살표함수, ArrowFuctiom, 람다
+    //(매개변수) => 내용 형태로 작성된다
+    //한줄일 경우 {}를 사용하지 않아도 된다.
+    //한줄일 경우 return문을 쓰지 않아도 리턴된다.
+    const func2 = (item) => "안녕하세요,"+ item + "님";
+    //console.log(func2("홍길동"));
+    //{}를 사용하면 값을 리턴할 떄 return을 적어줘야한다.
+    const func3 = (item) => {
+        return "안녕하세요,"+ item + "님";
+    }
+    //console.log(func3("홍길동"));
+
     //3. 매개변수 기본값 설정 가능
+
+   function func4(item) {
+    if(item == undefined)
+        console.log("값이 없습니다");
+        else{
+        console.log(item);
+   }
+   } 
+   
+   //func4();
+
+   //es6
+   //값이 없을 때 사용할 기본값을 설정할 수 있다
+   function func5(item = "값이 없습니다") {
+        console.log(item);
+   }
+   //func5("안녕");
+
     //4. 백틱
+    //문자열을 더할 때 + 를 적어 주는 것이 매우 불편
+    //백틱(문자열 보간)을 사용하면 편하게
+    //문자열에 변수를 적어 줄 수 있다 
+    //``백틱 사이에 ${변수} 형식으로 넣어준다
+    const func6 = (item) => {
+        //return "안녕하세요,"+ item + "님";
+        return `안녕하세요, ${item}님`;
+        //파이썬 f"{}"
+        //Dart "${}"
+    }
+    //console.log(func6("가나다"));
+
+    const str1 ="동해물과\n백두산이";
+    //백틱을 쓰더라고 개행은 \n을 사용하는것이 편하다
+    const str2 =`동해물과
+백두산이`;
+    //console.log(str1);
+    //console.log(str2);
     //5. js 모듈(여기서는 생략)
     //6. 비구조화 할당
+
+    const arr1 = ["apple", "banana", "melon"];
+
+    //es5
+    //배열의 한 값을 가져올 떄
+    const item1 = arr1[0];
+    const item2 = arr1[1];
+    const item3 = arr1[2];
+
+
+    //es6
+    //index 순서대로 값을 가져온다
+    //순서대로 가져오기 때문에 뒤에거 하나만 들고오기 어렵다
+    const [item01] = arr1;
+    console.log(item01);
+
+    const obj1 = {
+        name:"홍길동",
+        age:15,
+        say: () => `안녕하세요`
+    };
+
     //7. string 메소드 일부 추가
 
 </script>
