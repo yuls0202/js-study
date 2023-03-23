@@ -1,0 +1,36 @@
+<script>
+    //s05-es6.html
+    //1. let const
+    
+    //스코프가 함수 단위
+    var tempVar1 = 1;
+    //같은 이름으로 다시 선언해도 작동됨
+    var tempVar1 = 2;
+
+    //스코프가 블록 단위
+    let tempLet1 = 1;
+    //같은 이름으로다시 선언하지 못함
+    //let tempLet1 = 2;//에러
+    //let은 값응 재할당 가능하다.
+    tempLet1 = 2;
+
+    //스코프가 블록단위
+    const tempConst1 = 1;
+    // 같은 이름으로다시 선언하지 못함
+    // const tempConst1 = 2;//에러
+    // const는 값을 재설정 할 수 없다.
+    //tempConst1 = 2;//에러
+
+    //항상 처음에 선언할 떄
+    //const 선언
+    //값을 바꿔야 하는 경우 let으로 변경
+    //스코프를 늘려야 할 경우 var로 변경
+
+    //2. Arrow Fuction
+    //3. 매개변수 기본값 설정 가능
+    //4. 백틱
+    //5. js 모듈(여기서는 생략)
+    //6. 비구조화 할당
+    //7. string 메소드 일부 추가
+
+</script>
