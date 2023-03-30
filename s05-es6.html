@@ -108,9 +108,11 @@
 
     //es6
     //index 순서대로 값을 가져온다
+    const [item01,item02,item03] = arr1;
+    //일부만 들고 올 수 있다
     //순서대로 가져오기 때문에 뒤에거 하나만 들고오기 어렵다
-    const [item01] = arr1;
-    console.log(item01);
+    const [item001] = arr1;
+    //console.log(item01);
 
     const obj1 = {
         name:"홍길동",
@@ -118,6 +120,20 @@
         say: () => `안녕하세요`
     };
 
-    //7. string 메소드 일부 추가
+    //es5
+    const name1 = obj1.name;
+    const age1 = obj1.age;
+    const say1 = obj1.say;
+
+    //es6
+    //프로퍼티 명으로 값을 가져올 수 있다
+    const {say,name,age} = obj1;
+    //순서 상관 없이 가져올 수 있음
+    //같은 타입의 객체일 경우 이름이 중복되어 가져오기 어렵다
+    //const {say} = obj1;
+
+
+
+    //7. string 메소드 일부 추가(생략             )
 
 </script>
