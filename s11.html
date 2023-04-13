@@ -44,4 +44,124 @@
     //console.log(str.toUpperCase());//문자열을 다 대문자로
     //console.log(str.padStart(10).trim());//좌우공백 삭제//패드스타트 10으로 줬지만 삭제replaceAll도 같은기능
     //console.log("aa aa".replaceAll(" ", ""));
+    
+    //배열 메소드
+    const arr = ["A", "B", "c", "d"];
+    
+    //console.log(arr.concat("e", "f"));//요소
+    //console.log(arr.concat(["g"]));//배열
+    //console.log(arr.copyWithin(0,1,2));//첫번쨰 자리에 숫자를 지정해 문자를 삽입
+    //console.log(arr.fill("a"));//안에 있는걸 다 a로 만드는 함수
+    //console.log([[1,2],[3,4]].flat());
+    //console.log(arr.pop());
+    //console.log(arr);
+    //console.log(arr.push("e"));
+    //console.log(arr);
+    //console.log(arr.shift());
+    //console.log(arr);
+    //console.log(arr.splice(1,2));
+    //console.log(arr);
+    
+   // arr.push("d")
+
+    /*const idx = arr.indexOf("d");//하나가 더 존재하거나 -1이 되면 잘라내기 어렵다
+    console.log(arr.splice(idx,1));
+    console.log(arr);*/
+
+    // 콜백 함수
+    // callback
+    /*const temp = () => console.log("ㅎㅇㄹ");
+    const temp1 = () => console.log("ㅂㅇㄹ");
+
+    const  myFunc = (func) => {
+        // 작업 완료시 외부 함수를 작동하고 싶다
+        // 외부 함수를 개발자가 선택하게 하고 싶다
+        func();
+    }
+
+    myFunc(temp);
+    myFunc(() => console.log("asdf"));*/
+
+    /*const checkName = (name, checker) => {
+        const result = checker(name);
+        console.log(result);
+    }
+
+    const tempName = "lgm"; 
+    const tempChecker = (name) => {
+        return name.indexof("a");
+    }
+    
+    checkName(tempName, tempChecker);*/
+
+    // 함수를 매개변수로 받는 배열 메소드
+    // forEach, filter, map, every, find, some,reduce
+
+    /*for (let index = 0; index < arr.length; index++) {
+        console.log(arr[index]);
+    }*/
+
+    /*for (const item of arr) {
+        console.log(item);*/
+    
+
+    /*for (const key in arr) {
+            console.log(arr[key])
+        }*/
+   /*const callbackFn = (value, index, array) => {
+        console.log(value);
+        console.log(index);
+        console.log(array);
+    }
+    //arr.forEach(callbackFn);
+    arr.forEach(value => console.log(value));*/
+
+    //console.log(arr.filter((value) => value != "d"));
+
+    /*const predicate = (value) => {
+        return value == "d";
+    }
+    arr.filter(predicate)*/
+
+    //객체 Map과 array 메소드 map은 전혀 상관없다.
+    //기존 데이터를 변경하거나 타입을 바꿔서 배열을 만들떄 사용한다
+
+    const callback = (e) =>{
+        //return e.repeat(3);
+        //return [e];
+        return arr.indexOf(e);
+    }
+
+    const result = arr.map(callback);
+    //console.log(result);
+    
+    //객체
+    const obj =  {
+        key1 : "value1",
+        key2(){
+            this.key1;
+        },
+        key3 : {
+            subKey1 : "subValue1"
+        }
+    }
+    //obj.key2();
+    obj?.key3?.subKey1
+
+    // Date 
+
+    console.log(`Date.now() : ${Date.now()}`);
+    const myDate = new Date();
+    const tempDate = new Date('2023-01-01T12:00:00.000z')
+    //console.log(myDate);
+    //console.log(tempDate);
+
+    console.log(`myDate.getFullYear() : ${myDate.getFullYear()}`);
+    console.log(`myDate.getMonth() : ${myDate.getMonth()}`);
+    console.log(`myDate.getDate() : ${myDate.getDate()}`);
+    console.log(`myDate.getDay() : ${myDate.getDay()}`);
+    console.log(`myDate.toJSON() : ${myDate.toJSON()}`);
+    //myDate.
+    //navigator
+    //window.
 </script>
