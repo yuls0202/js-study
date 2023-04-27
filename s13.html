@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+        <button onclick="add()">내용 추가</button>
+        <input id="num" type="text" placeholder="번호를 입력하세요.">
+        <button onclick="remove()"">내용 삭제</button>
+    </div>
+    <!--beforebegin-->
+    <div id = "content">
+        <!--agterbegin-->
+        <p>내용입니다.</p>
+        <!--beforeend-->
+    </div>
+     <!--afterend-->
+  </body>
+  <script>
+
+    let globalCount = 0;
+
+    const add = () => {
+        globalCount++;
+
+        const contentTag = document.getElementById("content");
+
+        contentTag.insertAdjacentHTML(
+            "beforeend",
+            ` <p id= "child${globalCount}">${globalCount}번 추가 내용입니다.</p>`
+        );
+    }
+
+    const remove = () => {
+        const contentTag = document.getElementById("content");
+        const numTag = document.getElementById("num");
+
+        const deleteTag = document.getElementById("child"+numTag.value);
+
+        if(deleteTag !=null){
+            contentTag.removeChild(deleteTag);
+        }else{
+            alert("잘못된 요청입니다.")
+        }
+
+    }
+
+  </script>
+</html>

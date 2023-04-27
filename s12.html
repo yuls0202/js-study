@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>제목1</h1>
+   <h1>제목2</h1>
+   <!---<div id="myDiv" onclick="alert('확인')">아이디</div>--->
+   <div id="myDiv" style="color: red;">아이디</div>
+
+   <p class="my-div first">첫번째</p>
+   <p class="my-div second">두번쨰</p>
+</body>
+<script>
+    //html 컨트롤
+    const h1List =  window.document.getElementsByTagName("h1");
+    const h1List2 = document.querySelectorAll("h1");
+
+    document.get
+
+    //console.log(h1List);
+    //console.log(h1List2.innerText);
+    const myDivElement = document.getElementById("myDiv");
+    //querySelector는 css 선택자를 이용한다
+    //const myDivEl = document.querySelector("body > #myDiv");
+    //const myDivEl = document.querySelector("div[id='myDiv']");
+    const myDivEl = document.querySelector("div[id*='M']");//자료검색느낌
+    //console.log(myDivEl);
+    //console.log(myDivElement);
+    myDivElement.setAttribute("style","color: red;");
+
+    const pElementList =  document.getElementsByClassName("my-div");
+    const pElementList1 = document.querySelectorAll(".my-div");
+
+    pElementList1.forEach(element => {
+        console.log(element.innerText);
+    });
+
+    
+
+    //속성 지정    
+    //myDivElement.setAttribute("style","color: blue;");
+    //myDivElement.style.color = "gray"
+    //표준 속성은 .으로 찾아서 입력
+    myDivElement.innerText = "바꿈";
+    // 비표준 속성은 setAttribute 사용
+    myDivElement.setAttribute("asdf","메롱")
+
+    //태그에 기능 추가
+    //1.태그의 속성에 기능 추가하기 (onclick="alert('확인')")
+    const func = () =>  {
+        alert("확인");
+    }
+    //(() => alert("체크"))();
+    //2. 태그객체의 on 기능 정의 해주기
+    myDivElement.onclick = func;
+    //console.log(myDivElement.onclick);
+    myDivElement.onclick = null;
+
+    //3. 리스너 추가하기
+    myDivElement.addEventListener("click",func);
+    myDivElement.addEventListener("click",() =>{
+        alert("두번째확인");
+    });
+
+    myDivElement.removeEventListener("click",func);
+
+    //태그 만들기
+    const newElement = document.createElement("div");
+    newElement.innerText = "쨔스로 만든 태그";
+    newElement.onclick = () => alert("wow")
+    document.body.appendChild(newElement);
+
+    const newElement1 = document.createElement("h2");
+    newElement1.innerText = "교체태그";
+    document.body.replaceChild(newElement1,newElement);//바꿀거를 앞에 넣고 바뀔거를 뒤에 넣는다
+    //태그 삭제
+    document.body.removeChild(newElement1);
+
+    //클래스
+    const DivElement = document.querySelector(".my-div");
+    //console.log(DivElement.className);
+    //console.log(DivElement.classList);
+
+    //DivElement.className = "check-class";
+    DivElement.classList.add("check-class");
+
+    //css가져오기
+    console.log(myDivElement.style.color);
+    console.log(getComputedStyle(myDivElement).color);
+</script>
+</html>
